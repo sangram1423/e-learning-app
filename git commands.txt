@@ -86,6 +86,6 @@ start working on BUG-122 and commit and push changes to remote repo.
 
 again do "git stash apply" to get your old BUG-121 code to continue work on remaining work to complete.
 
-Note: we shold not remove the old code and we should not push the BUG-121 code to remote repo to work with BUG-122 priority wise.
+Note: we should not remove the old code and we should not push the BUG-121 code to remote repo to work with BUG-122 priority wise.
 
 
