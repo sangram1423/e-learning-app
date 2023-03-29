@@ -1,0 +1,28 @@
+1. git init - to create git configuration in our project, which will generate a ".git" file (hidden)
+2. git config -> will setup username, email and password for the git configuration global and locally, so that it will not ask for pushing the latest code multiple times. commands are below
+3. git config --global user.name "sangram1423"
+4. git config --glibal user.email "technomsangru@gmail.com"
+5. git status -> will show all unstaged files from where you have made the "git init" or where you have ".git" hidden file.
+6. git add file_name -> will add a single file (file_name) into the staging area for commit.
+7. git add . -> . will add all the files/folders which are there in the folder where you made "git init".
+8. git commit -m "first commit" -> will commit all the files/folders to our repository but will not show all files/folders in our repository.
+	-m = message for commit 
+9. git branch -M main -> it will change the 'master' branch name to 'main' branch.
+	-M = will change the branch name
+10. git remote add origin "repository url" -> it will add your codes into the remote repository where you wanted to store all your codes.
+11. git push -u origin master/main -> I have have changed the branch from master to main using "git branch -M main" So I need to use the command for pushing as "git push -u origin main".
+12. git log -> for seeing all our commits into the remote repository.
+13. git log 10 -> will show only latest 10 commits from the remote repository
+
+Q1-) Suppose I have modified few files and I wanted to push to the remote repository with my personal commits. what should I use commands to push.
+
+git status -> will show all modified files and all unstaged file.
+So I want to add the modified file not unstaged files then use below commands
+git add file_name
+git commit -m "added new file"
+git push  -> will push to origin main/master
+
+git restore --staged .  -> all files will be moved from staged to unstaged, if they are not commited or pushed.
+
+git pull - to get latest code from the master
+
