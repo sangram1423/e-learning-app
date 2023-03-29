@@ -40,3 +40,7 @@ Note-: Some other developer modified some files in github and commited and pushe
 16.git help -> will show all commands of git hub.
 17. git help command_name -> will show mentioned command_name functionality to use.
 	e.g-> git help init
+18. git add --a -> also will add the modified files to the staging area.
+
+19. 
+
