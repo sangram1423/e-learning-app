@@ -19,6 +19,7 @@ public class NiceAdminApiApplication {
 		SpringApplication.run(NiceAdminApiApplication.class, args);
 	}
 
+
 	@Bean
 	public ModelMapper modelMapper() {
 		ModelMapper modelMapper = new ModelMapper();
