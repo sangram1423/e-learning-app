@@ -37,4 +37,6 @@ Ans- : If you do some modification to a file and in your remote repository you h
 14. git pull - to get latest code from the master
 15. git clone repository_url -> will download from the github repository to our local computer and start working on the requirement and add -> commit -> push 
 Note-: Some other developer modified some files in github and commited and pushed then we should use the "git pull" to get the latest code.
-16.
+16.git help -> will show all commands of git hub.
+17. git help command_name -> will show mentioned command_name functionality to use.
+	e.g-> git help init
