@@ -14,15 +14,27 @@
 12. git log -> for seeing all our commits into the remote repository.
 13. git log 10 -> will show only latest 10 commits from the remote repository
 
-Q1-) Suppose I have modified few files and I wanted to push to the remote repository with my personal commits. what should I use commands to push.
+Q-1-) Suppose I have modified few files and I wanted to push to the remote repository with my personal commits. what should I use commands to push.
 
 git status -> will show all modified files and all unstaged file.
 So I want to add the modified file not unstaged files then use below commands
 git add file_name
 git commit -m "added new file"
-git push  -> will push to origin main/master
+git push  -> will push to origin main/master (it will push only the modified file not the unstaged files)
 
-git restore --staged .  -> all files will be moved from staged to unstaged, if they are not commited or pushed.
+Q-2) I have 2 staged file but I don't want to make push those 2 files, So I need to do unstage (red color). what command I should execute?
 
-git pull - to get latest code from the master
+git status -> will show staged files (green color)
+git restore --staged .  -> all files will be moved from staged to unstaged (Note -: if they are not commited and pushed)
+
+git restore --staged file_name -> will do unstage single mentioned file.
+
+Q-3) How "restore" command works as multi purpose? (for unstage / discard changes)
+Ans- : If you do some modification to a file and in your remote repository you have old content file. but you modified in your system. you want to remove those newly modified codes then you should go for 2 commands to fix
+	1.1 either you can use "git add file_name" to add those file and commit and push 
+	1.2 or you can use "git restore file_name" to remove our new changes to the file. it will update with the updated remote repository content.
+
+14. git pull - to get latest code from the master
+15. git clone repository_url -> will download from the github repository to our local computer and start working on the requirement and add -> commit -> push 
+Note-: Some other developer modified some files in github and commited and pushed then we should use the "git pull" to get the latest code.
 
