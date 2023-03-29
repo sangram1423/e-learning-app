@@ -42,5 +42,50 @@ Note-: Some other developer modified some files in github and commited and pushe
 	e.g-> git help init
 18. git add --a -> also will add the modified files to the staging area.
 
-19. 
+some conflict case solutions
+----------------------------
+sangrutransient user has changed the file employee.java
+
+Now sangram1423 is trying to change the the same file employee.java and pushing to remote repository.
+then the conflict will come with the employee.java file, like below
+
+<<<<<<< HEAD (sangram1423)
+sangrutransient has modified the same file employee.java which 
+sangram1423 is also changing at the same time with the sangru1423 user.
+======= (sangrutransient)
+Now sangrutransient user is changeing the employee.java file and commiting and pushing.
+>>>>>>> 7e3ac17a2d8ae2753bcd459436f7323701752037
+
+So the "git pull" will conflict the file which has been modified by multiple users same time.
+In that case we need to schedule a meeting with the user and manually arrange the code and commit it with new intregrated code and push the change to remote repository.
+
+we need to remove unwanted codes and integrate both ser code by discus and commit and push the code.
+
+19. git stash -> After doing some changes to make working tree clean by storing our changes to temporary storage, we will use "git stash" command.
+
+use-case for git stash  (back up)
+----------------------
+Manager assigned BUG-121 to fix @9:00 AM
+You have started code changes to the Bug fixing and you commited at 12:00 pm and not completed (partially compltely the bug fix)
+
+By 12:30 PM manager  told that BUG-122 is high priority than BUG-121.
+Park your BUG-121 and fix the BUG-122  first and then fix BUG-121
+
+Answer
+------
+I am commiting and pushing before pulling the latest which has made by sangram1423 user.
+check wether we will get error or not.
+
+I am working on BUG-121 which is patially completed and my manager gave me another work BUG-122 which is having more priority, need to complete the BUG-122 before BUG-121.
+
+In that case we need to use the "git stash" 
+
+before starting the BUG-122 use git stash command, so that it will be stored in a temporary or back up file.
+
+start working on BUG-122 and commit and push changes to remote repo.
+
+again do "git stash apply" to get your old BUG-121 code to continue work on remaining work to complete.
+
+Note: we shold not remove the old code and we should not push the BUG-121 code to remote repo to work with BUG-122 priority wise.
+
 
