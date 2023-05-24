@@ -88,7 +88,6 @@ again do "git stash apply" to get your old BUG-121 code to continue work on rema
 
 Note: we should not remove the old code and we should not push the BUG-121 code to remote repo to work with BUG-122 priority wise.
 
-
 Git Branches
 --------------------
 ->Git branches are used to maintain separate code bases in the repository.
@@ -134,3 +133,55 @@ git checkout main -> (I am in develop branch) will switch to main branch from de
 ---------------
 -> It is a text file which is used to configure files and folders to ignore from git operations
 ex: target folder, .project file, .settings file and .classpath file
+
+git merge -: who has done what commits, all history will will be populated when you use merge command.
+--------------
+git init
+touch m1.txt
+git add .
+git commit -m 'm1 file commited to master'
+
+git branch feature
+touch f1.txt
+git add .
+git commit -m "f1 file commited to feature"
+
+git checkout master
+touch m2.txt
+git add .
+git commit -m "m2 file is added to master branch"
+
+git checkout feature
+git merge master -: will merge all master changes to feature branch. and all histories will come if you use git log -a. So it will maintein the commit history. so we must preserve commit history which we should go for git merge.
+
+git rebase -: it will not preserve the commit history using rebase command. all commit histry will not come in the git log.
+--------------
+git init
+touch m1.txt
+git add .
+git commit -m 'm1 file commited to master'
+
+git branch feature
+touch f1.txt
+git add .
+git commit -m "f1 file commited to feature"
+
+git checkout master
+touch m2.txt
+git add .
+git commit -m "m2 file is added to master branch"
+
+git checkout feature
+git rebase master -: will merge all master changes to feature branch. and only master histories will come if you use git log -a. So it will not maintein all commits the commit history
+
+Q. When we should go for "git merge" and "git rebase"?
+Whenever we are merging the changes from one branch to another branch for a producion release, we need to track the commit history, we need to preserve the commit history, because who made what changes to need to track for 1 production release, for that we need to go for "git merge".
+
+Once the release is completed and everything is success, and when you want to start the new developement for another production release, then we don't need the commit history of all the commits of the first release, So in that case we can for "git rebase".
+
+Q. Difference between git pull and git fetch?
+
+git pull -: will download the new changes from repository
+git fetch -: will notify you that new changes are there in repository
+
+
